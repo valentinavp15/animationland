@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shadow{
+            background: lightgray;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .circle{
+            background-color: #85FFBD;    
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 48px;
+        }
+
+        .circle:hover{
+            /* Esto le da 20px en x positivos es decir que corre hacia la derecha el elemento y le da 20 px en negativo, es decir que lo empuja hacia arriba ya que en los navegadores el eje y positivo es hacia abajo */
+            transform: translate(20px, -20px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="shadow">
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
