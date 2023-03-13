@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        
+        .nav{
+            display: flex;
+        }
+
+        /* Esto oculta todos los ul que hay dentro de lis en nav */
+        .nav li ul{
+            display: block;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 400ms;
+            transition-delay: 300ms;
+        }
+
+        .nav li:hover > ul{
+            opacity: 1;
+            transition: opacity 400ms;
+            transition-delay: 300ms;
+        }
+
+        .nav li ul li{
+            position: relative;
+            right: -80px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="/">Mujer</a>
+            <ul>
+                <li><a href="/">Camisetas</a></li>
+                <li><a href="/">Chaquetas</a></li>
+                <li>
+                    <a href="/">Pantalones</a>
+                    <ul>
+                        <li><a href="/">Tela</a></li>
+                        <li><a href="/">Jeans</a></li>
+                        <li><a href="/">Shorts</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/">Hombre</a></li>
+        <li><a href="/">Accesorios</a></li>
+    </ul>
+</body>
+</html>

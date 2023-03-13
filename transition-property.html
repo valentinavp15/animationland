@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-container{
+            background: papayawhip;
+            width: 400px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            margin: 30px;
+        }
+        .card-container:hover .box{
+            transform: scale(1.2);
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .one{
+            background: lightblue;
+            /* Modifica la propiedad transformación en el tiempo determinado */
+            transition: transform 500ms;
+        }
+        .two{
+            background: salmon;
+            transition: transform 1s;
+        }
+        .three{
+            background: lightgreen;
+            transition: transform 1.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="box one"></div>
+        <div class="box two"></div>
+        <div class="box three"></div>
+    </div>
+</body>
+</html>
