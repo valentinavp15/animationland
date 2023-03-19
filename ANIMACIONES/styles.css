@@ -1,0 +1,331 @@
+:root{
+    --azul-fondo:#ccefff;
+    --blanco-conejo:#ffffff;
+    --rosa-conejo:#fad3d3;
+    --verde-montañas:#54a954;
+    --cafe-montañas:#bc804c;
+    --cafe-sombra:#885528;
+}
+
+body{
+    /* crea o reinicia un contador */
+    counter-reset: game;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+input:checked{
+    /* incrementa un valor de contador */
+    counter-increment: game;
+}
+
+.total-count::after{ 
+    /* inserta el contenido generado (usar con pseudoelemento after) */ 
+    /* counter funcion que agrega el valor de un contador a un elemento */
+    content: counter(game);
+}
+
+/* DIBUJO DEL TELEFONO */
+.phone{
+    position: relative;
+    border: 8px solid black;
+    /* Para que aparezca primero el borde del telefono */
+    overflow: hidden;
+    border-radius: 40px;
+    height: 600px;
+    width: 300px;
+    background-color: var(--azul-fondo);
+    box-shadow: 0 19px 38px rgb(0,0,0, 0.3), 0 15px 12px rgb(0,0,0, 0.22);
+}
+
+/* SE ORGANIZAN LAS 10 CAPAS */
+.layer-1{
+    position: absolute;
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+}
+
+.layer-2{
+    position: absolute;
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    left: 60px;
+}
+
+.layer-3{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgb(0,0,0, 0.3), 0 15px 12px rgb(0,0,0, 0.22);
+}
+
+.layer-4{
+    position: absolute;
+    z-index: 4;
+    height: 350px;
+    width: 80px;
+    bottom: 0;
+    left: 15px;
+}
+
+.layer-5{
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    margin: 0 auto;
+    width: 200px;
+    height: 300px;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgb(0,0,0, 0.3), 0 15px 12px rgb(0,0,0, 0.22);
+}
+
+.layer-6{
+    position: absolute;
+    z-index: 6;
+    height: 250px;
+    width: 80px;
+    bottom: 0;
+    right: 40px;
+}
+
+.layer-7{
+    position: absolute;
+    z-index: 7;
+    right: 0;
+    margin: 0 auto;
+    width: 170px;
+    height: 200px;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgb(0,0,0, 0.3), 0 15px 12px rgb(0,0,0, 0.22);
+}
+
+.layer-8{
+    position: absolute;
+    z-index: 8;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 150px;
+    height: 120px;
+    bottom: 0;
+    background-color: var(--verde-montañas);
+}
+
+.layer-9{
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    width: 110px;
+    height: 100px;
+    bottom: 0;
+}
+
+.layer-10{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    width: 110px;
+    height: 100px;
+    bottom: 0;
+}
+
+/* SE DIBUJAN TODOS LOS ELEMENTOS DEL CSS */
+
+/* Conejo */
+.left-ear--outer{
+    background: var(--blanco-conejo);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+
+.left-ear--inner{
+    background: var(--rosa-conejo);
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+
+.right-ear--outer{
+    background: var(--blanco-conejo);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+
+.right-ear--inner{
+    background: var(--rosa-conejo);
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+
+.head{
+    background: var(--blanco-conejo);
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    border-radius: 50%;
+    /* Para centrar el elemento dentro de la caja */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.head__eye {
+    background: black;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 15px;
+}
+
+.head__eye-left{
+    left: 30px;
+}
+
+.head__eye-right{
+    right: 30px;
+}
+
+/* Montañas */
+.montain{
+    position: absolute;
+    background: var(--cafe-montañas);
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    border-radius: 20px;
+    
+}
+
+.shadow-montain{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(135deg, var(--cafe-sombra) 25%, transparent 25%) -50px 0,
+    linear-gradient(-135deg, var(--cafe-sombra) 25%, transparent 25%) -50px 0,
+    linear-gradient(45deg, var(--cafe-sombra) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--cafe-sombra) 25%, transparent 25%);
+    background-size: 30px 150px;
+}
+
+.grass{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    border-radius: 20px 20px 0 0 ;
+    background: linear-gradient(135deg, var(--verde-montañas) 25%, transparent 25%) -50px 0,
+    linear-gradient(-135deg, var(--verde-montañas) 25%, transparent 25%) -50px 0,
+    linear-gradient(45deg, var(--verde-montañas) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--verde-montañas)25%, transparent 25%);
+    background-size: 30px 100px;
+} 
+
+/* Nubes */
+.right-circle-white{
+    background: var(--blanco-conejo);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    bottom: -5px;
+    position: absolute;
+    left: 60px;
+    
+}
+
+.center-circle-white{
+    background: var(--blanco-conejo);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.left-circle-white{
+    background: var(--blanco-conejo);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    bottom: -5px;
+    position: absolute;
+    right: 60px;
+    
+}
+
+.backgroud-clouds{
+    background: var(--blanco-conejo);
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 24px;
+    top: 20px;
+}
+
+.center-circle-green{
+    background: var(--verde-montañas);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.left-circle-green{
+    background: var(--verde-montañas);
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    bottom: 30px;
+    position: absolute;
+    right: 96px;    
+}
+
+.right-circle-green{
+    background: var(--verde-montañas);
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+    bottom: 30px;
+    position: absolute;
+    left: 96px;    
+}
