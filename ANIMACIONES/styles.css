@@ -8,24 +8,13 @@
 }
 
 body{
+    font-family: 'Princess Sofia', cursive;
     /* crea o reinicia un contador */
-    counter-reset: game;
     margin: 0;
     height: 100vh;
     width: 100%;
     display: grid;
     place-items: center;
-}
-
-input:checked{
-    /* incrementa un valor de contador */
-    counter-increment: game;
-}
-
-.total-count::after{ 
-    /* inserta el contenido generado (usar con pseudoelemento after) */ 
-    /* counter funcion que agrega el valor de un contador a un elemento */
-    content: counter(game);
 }
 
 /* DIBUJO DEL TELEFONO */
@@ -39,6 +28,31 @@ input:checked{
     width: 300px;
     background-color: var(--azul-fondo);
     box-shadow: 0 19px 38px rgb(0,0,0, 0.3), 0 15px 12px rgb(0,0,0, 0.22);
+    /* Acá inicio el contador de score ya que todo el codigo se encuentra dentro de este div  */
+    counter-reset: score;
+}
+
+input[type=checkbox]{
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    top: 0;
+    z-index: 2;
+}
+
+/* Acá incremento el score cada que se haga click en el input */
+input[type=checkbox]:checked{
+    counter-increment: score;
+}
+
+/* La clase total-count es donde se tiene el texto que mostrara el contador */
+.total-count::after{
+    /* inserta el contenido generado (usar con pseudoelemento after) */ 
+    /* counter funcion que agrega el valor de un contador a un elemento */
+    content: counter(score);
 }
 
 /* SE ORGANIZAN LAS 10 CAPAS */
@@ -49,6 +63,19 @@ input:checked{
     width: 80px;
     bottom: 0;
     right: 60px;
+
+    animation-name: bunny1jump;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bunny1jump{
+    0% {bottom: 0;}
+
+    25%{bottom: -80px;}
+
+    100%{bottom: 0;}
 }
 
 .layer-2{
@@ -58,6 +85,19 @@ input:checked{
     width: 80px;
     bottom: 0;
     left: 60px;
+
+    animation-name: bunny2jump;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bunny2jump{
+    0% {bottom: 0;}
+
+    50%{bottom: -80px;}
+
+    100%{bottom: 0;}
 }
 
 .layer-3{
@@ -80,6 +120,19 @@ input:checked{
     width: 80px;
     bottom: 0;
     left: 15px;
+
+    animation-name: bunny3jump;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bunny3jump{
+    0% {bottom: 0;}
+
+    25%{bottom: -100px;}
+
+    100%{bottom: 0;}
 }
 
 .layer-5{
@@ -101,6 +154,19 @@ input:checked{
     width: 80px;
     bottom: 0;
     right: 40px;
+
+    animation-name: bunny4jump;
+    animation-duration: 0.85s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bunny4jump{
+    0% {bottom: 0;}
+
+    75%{bottom: -75px;}
+
+    100%{bottom: 0;}
 }
 
 .layer-7{
@@ -206,6 +272,24 @@ input:checked{
     height: 4px;
     position: absolute;
     top: 15px;
+
+    /* Se le puede asignar cualquier nombre a las animaciones */
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* ANIMACIÓN PARPADEO OJOS */
+@keyframes blink{
+    /* Este es el inicio de la transformación  */
+    0%{height: 4px;}
+
+    /* Acá al 5% del tiempo es donde decidimos disminutir el tamaño del ojo del conejo, y además traslate el elemento para que quede en el centro */
+    5% {height: 1px;
+        transform: translate(0px, 2px);}
+    /* Acá al 10% del tiempo vuelve al tamaño inicial el elemento y el traslate vuelve al estado inicial */
+    10% {height: 4px;
+        transform: translate(0px, 0px);}
 }
 
 .head__eye-left{
@@ -328,4 +412,15 @@ input:checked{
     bottom: 30px;
     position: absolute;
     left: 96px;    
+}
+
+h3 {
+    color: var(--cafe-montañas);
+    margin: 0 0 0 120px;
+
+}
+
+h1{
+    color: var(--cafe-sombra);
+    margin: 20px 0 0 65px;
 }
